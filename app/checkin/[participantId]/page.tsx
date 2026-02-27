@@ -29,7 +29,7 @@ function LoadingState() {
     <div className="min-h-screen bg-[#0F0F0F] flex items-center justify-center relative overflow-hidden">
       {/* Background Orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#FCB216] to-[#E85D24] rounded-full blur-[120px] opacity-[0.1] animate-pulse-glow" />
-      
+
       <div className="text-center relative z-10">
         <div className="w-24 h-24 mx-auto mb-6 relative">
           <div className="absolute inset-0 border-4 border-t-[#FCB216] border-r-[#E85D24] border-b-[#D91B57] border-l-[#63205F] rounded-full animate-spin" />
@@ -57,7 +57,7 @@ function ErrorState({
     <div className="min-h-screen bg-[#0F0F0F] flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Orb */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#D91B57] to-[#63205F] rounded-full blur-[120px] opacity-[0.08]" />
-      
+
       <div className="bg-[rgba(255,255,255,0.03)] backdrop-blur-[10px] rounded-3xl border border-[rgba(255,255,255,0.1)] p-8 max-w-md w-full text-center relative z-10">
         {/* Error Icon */}
         <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#D91B57] to-[#63205F] p-1">
@@ -82,7 +82,7 @@ function ErrorState({
           Participant Not Found
         </h1>
         <p className="text-[rgba(255,255,255,0.6)] mb-8 text-lg">{error}</p>
-        
+
         <button
           onClick={onGoHome}
           className="w-full px-6 py-4 rounded-full bg-gradient-to-r from-[#FCB216] via-[#E85D24] to-[#D91B57] text-white font-semibold text-lg transition-all duration-300 hover:shadow-[0_20px_40px_rgba(231,88,41,0.4)] hover:-translate-y-1"
@@ -104,7 +104,7 @@ function SuccessState({ participant }: { participant: ClientParticipant }) {
       {/* Background Orbs */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-[#FCB216] to-[#E85D24] rounded-full blur-[120px] opacity-[0.1] animate-pulse-glow" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#D91B57] to-[#63205F] rounded-full blur-[120px] opacity-[0.08] animate-pulse-glow" style={{ animationDelay: '2s' }} />
-      
+
       <div className="bg-[rgba(255,255,255,0.03)] backdrop-blur-[10px] rounded-3xl border border-[rgba(255,255,255,0.1)] p-8 md:p-12 max-w-2xl w-full text-center relative z-10 animate-fade-in-up">
         {/* Logo */}
         <div className="flex justify-center mb-6">
@@ -142,7 +142,7 @@ function SuccessState({ participant }: { participant: ClientParticipant }) {
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#FCB216] via-[#E85D24] to-[#D91B57] bg-clip-text text-transparent tracking-wide">
           Check-in Successful!
         </h1>
-        
+
         <div className="inline-block px-6 py-2 rounded-full bg-[rgba(231,88,41,0.15)] border border-[rgba(231,88,41,0.4)] mb-8">
           <span className="text-[#FCB216] text-sm font-semibold tracking-wider uppercase">
             Welcome to Hackoverflow 4.0
@@ -248,7 +248,7 @@ export default function CheckInPage() {
       {/* Background Orbs */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-[#FCB216] to-[#E85D24] rounded-full blur-[120px] opacity-[0.08] animate-pulse-glow" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#D91B57] to-[#63205F] rounded-full blur-[120px] opacity-[0.08] animate-pulse-glow" style={{ animationDelay: '2s' }} />
-      
+
       {/* Decorative Dots */}
       <div className="absolute top-20 left-20 w-1 h-1 bg-[#FCB216] rounded-full opacity-40 animate-float" />
       <div className="absolute top-40 right-32 w-1 h-1 bg-[#E85D24] rounded-full opacity-50 animate-float" style={{ animationDelay: '1s' }} />
