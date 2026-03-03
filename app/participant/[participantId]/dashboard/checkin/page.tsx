@@ -80,28 +80,28 @@ export default function CheckInDashboardPage() {
                 <p className="text-gray-400 mt-1">Confirm your arrival at the venue</p>
             </header>
 
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-12">
                 <div className="max-w-md mx-auto text-center space-y-8">
                     <div className="space-y-2">
-                        <p className="text-gray-500 uppercase text-xs font-bold tracking-widest">Verify Details</p>
-                        <h2 className="text-2xl font-bold text-white">{participant?.name}</h2>
-                        <p className="text-gray-400 font-mono text-sm">{participant?.participantId}</p>
+                        <p className="text-gray-500 uppercase text-[10px] font-bold tracking-widest">Verify Details</p>
+                        <h2 className="text-xl md:text-2xl font-bold text-white">{participant?.name}</h2>
+                        <p className="text-gray-400 font-mono text-xs md:text-sm">{participant?.participantId}</p>
                     </div>
 
-                    <div className="bg-white/5 rounded-2xl p-6 text-left space-y-4">
-                        <div className="flex justify-between text-sm">
+                    <div className="bg-white/5 rounded-2xl p-5 md:p-6 text-left space-y-4">
+                        <div className="flex justify-between text-xs md:text-sm">
                             <span className="text-gray-500">Team</span>
-                            <span className="text-white font-semibold">{participant?.teamName || "N/A"}</span>
+                            <span className="text-white font-semibold truncate max-w-[120px] md:max-w-none">{participant?.teamName || "N/A"}</span>
                         </div>
-                        <div className="flex justify-between text-sm">
+                        <div className="flex justify-between text-xs md:text-sm">
                             <span className="text-gray-500">Institute</span>
-                            <span className="text-white font-semibold">{participant?.institute || "N/A"}</span>
+                            <span className="text-white font-semibold truncate max-w-[120px] md:max-w-none">{participant?.institute || "N/A"}</span>
                         </div>
-                        <div className="flex justify-between text-sm">
+                        <div className="flex justify-between text-xs md:text-sm">
                             <span className="text-gray-500">Phone</span>
                             <span className="text-white font-semibold">{participant?.phone || "N/A"}</span>
                         </div>
-                        <div className="flex justify-between text-sm">
+                        <div className="flex justify-between text-xs md:text-sm">
                             <span className="text-gray-500">Role</span>
                             <span className="text-white font-semibold">{participant?.role || "Hacker"}</span>
                         </div>
@@ -111,7 +111,7 @@ export default function CheckInDashboardPage() {
                         <button
                             onClick={handleCheckIn}
                             disabled={isPending}
-                            className="w-full bg-gradient-to-r from-[#FCB216] via-[#E85D24] to-[#D91B57] text-white font-bold py-4 rounded-xl transition-all duration-300 hover:shadow-[0_15px_30px_rgba(231,88,41,0.3)] hover:-translate-y-1 disabled:opacity-50 text-lg"
+                            className="w-full bg-gradient-to-r from-[#FCB216] via-[#E85D24] to-[#D91B57] text-white font-bold py-3 md:py-4 rounded-xl transition-all duration-300 hover:shadow-[0_15px_30px_rgba(231,88,41,0.3)] hover:-translate-y-1 disabled:opacity-50 text-base md:text-lg"
                         >
                             {isPending ? "Processing..." : "Confirm Arrival ✓"}
                         </button>
