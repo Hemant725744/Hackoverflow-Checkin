@@ -12,7 +12,7 @@ export default function ResourcesPage() {
                 {/* WiFi Credentials */}
                 <section className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl space-y-6">
                     <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                        <span className="text-[#FCB216]">�</span> Network Access
+                        <span className="text-[#FCB216]">📡</span> Network Access
                     </h2>
                     <div className="space-y-4">
                         <div className="bg-black/20 p-4 rounded-2xl border border-white/5">
