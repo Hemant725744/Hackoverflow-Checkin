@@ -25,11 +25,11 @@ interface TimeRange {
 const SCHEDULE_DATA: ScheduleDay[] = [
     {
         day: 1,
-        date: '1st March, 2026',
+        date: '11th March, 2026',
         color: '#FCB216',
         icon: '📅',
         events: [
-            { startTime: '01:00 PM', endTime: '02:00 PM', title: 'Banner Revel', description: 'Welcome to Hackoverflow 4.0!', isMeal: false },
+            { startTime: '11:00 AM', endTime: '02:00 PM', title: 'Banner Revel', description: 'Welcome to Hackoverflow 4.0!', isMeal: false },
             { startTime: '02:00 PM', endTime: '04:00 PM', title: 'Orientation & Opening Ceremony', description: 'Official kickoff at the main auditorium.', isMeal: false },
             { startTime: '04:00 PM', endTime: '05:00 PM', title: 'Lab Allotment', description: 'Get assigned to your lab workspace.', isMeal: false },
             { startTime: '05:00 PM', endTime: '09:00 PM', title: 'Hackathon Begins', description: 'The clock starts now!', isMeal: false },
@@ -44,9 +44,9 @@ const SCHEDULE_DATA: ScheduleDay[] = [
         icon: '🚀',
         events: [
             { startTime: '08:00 AM', endTime: '09:00 AM', title: 'Breakfast', description: 'Energy up before the day begins.', isMeal: true },
-            { startTime: '09:00 AM', endTime: '01:00 PM', title: 'Coding [Assessment round 1]', description: 'First assessment round begins.', isMeal: false },
+            { startTime: '09:00 AM', endTime: '01:00 PM', title: 'Coding [Judging round 1]', description: 'First assessment round begins.', isMeal: false },
             { startTime: '01:00 PM', endTime: '02:00 PM', title: 'Lunch', description: 'Take a break and enjoy your meal.', isMeal: true },
-            { startTime: '02:00 PM', endTime: '06:00 PM', title: 'Coding [Assessment round 2]', description: 'Second assessment round.', isMeal: false },
+            { startTime: '02:00 PM', endTime: '06:00 PM', title: 'Coding [Judging round 2]', description: 'Second assessment round.', isMeal: false },
             { startTime: '06:00 PM', endTime: '08:00 PM', title: 'Dinner', description: 'Evening meal break.', isMeal: true },
             { startTime: '08:00 PM', endTime: '11:00 PM', title: 'Networking & Jamming Session', description: 'Connect with fellow hackers.', isMeal: false },
             { startTime: '11:00 PM', endTime: '07:00 AM', title: 'Coding', description: 'Burning midnight oil.', isMeal: false }
