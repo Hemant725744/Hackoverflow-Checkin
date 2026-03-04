@@ -195,6 +195,29 @@ export async function resetCheckIn(
   return result.modifiedCount > 0;
 }
 
+/**
+ * Update meal status for a participant
+ */
+export async function updateMealStatus(
+  participantId: string,
+  mealKey: string
+): Promise<boolean> {
+  const db = await getDatabase();
+
+  const result = await db.collection(COLLECTION_NAME).updateOne(
+    { participantId },
+    {
+      $set: {
+        [`mealStatus.${mealKey}.status`]: true,
+        [`mealStatus.${mealKey}.time`]: new Date(),
+        updatedAt: new Date(),
+      },
+    }
+  );
+
+  return result.modifiedCount > 0;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================

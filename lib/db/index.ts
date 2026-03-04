@@ -23,4 +23,5 @@ export {
   resetCheckIn,
   participantExists,
   getCollectionInfo,
+  updateMealStatus, // <--- ADDED THIS LINE
 } from './participants';

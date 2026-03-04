@@ -21,6 +21,7 @@ import {
   getAllParticipants,
   getParticipantsPaginated,
   countParticipants,
+  updateMealStatus, // <--- ADDED THIS IMPORT
 } from '@/lib/db';
 import {
   toClientParticipant,
@@ -271,6 +272,53 @@ export async function getParticipantCountAction(): Promise<ActionResult<number>>
     console.error('Error counting participants:', error);
     return createErrorResponse(
       error instanceof Error ? error.message : 'Failed to count participants',
+      'DB_ERROR'
+    );
+  }
+}
+
+// ============================================================================
+// NEW: Mark Meal Consumed Action
+// ============================================================================
+
+/**
+ * Mark a specific meal as consumed for a participant
+ */
+export async function markMealConsumedAction(
+  participantId: string,
+  mealKey: string
+): Promise<ActionResult<boolean>> {
+  // Rate limiting
+  const identifier = await getRateLimitIdentifier();
+  const rateLimitResult = actionRateLimiter.check(identifier);
+
+  if (!rateLimitResult.allowed) {
+    return createErrorResponse(
+      `Rate limit exceeded. Please try again in ${Math.ceil(rateLimitResult.retryAfterMs / 1000)} seconds.`,
+      'RATE_LIMITED'
+    );
+  }
+
+  // Validate inputs
+  if (!participantId || !mealKey) {
+    return createErrorResponse('Participant ID and Meal Key are required', 'VALIDATION_ERROR');
+  }
+
+  try {
+    const success = await updateMealStatus(participantId, mealKey);
+
+    if (!success) {
+      return createErrorResponse('Failed to update meal status. Participant may not exist.', 'NOT_FOUND');
+    }
+
+    return {
+      success: true,
+      data: true,
+    };
+  } catch (error) {
+    console.error('Error updating meal status:', error);
+    return createErrorResponse(
+      error instanceof Error ? error.message : 'Failed to update meal status',
       'DB_ERROR'
     );
   }

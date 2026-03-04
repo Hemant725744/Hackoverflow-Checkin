@@ -14,6 +14,7 @@ export {
   ClientParticipantSchema,
   CheckInTypeSchema,
   CheckInInputSchema,
+  MealStatusSchema, // <--- ADDED THIS
   // Types
   type WifiCredentials,
   type CheckInStatus,
@@ -21,6 +22,7 @@ export {
   type ClientParticipant,
   type CheckInType,
   type CheckInInput,
+  type MealStatus, // <--- ADDED THIS
   // Utilities
   toClientParticipant,
 } from './participant';
